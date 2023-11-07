@@ -1,0 +1,159 @@
+<div class="mx-auto w-full relative">
+  <section class="pt-32 md:pt-16 px-4 bg-slate-100 z-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 md:pt-32 pb-20 max-w-5xl mx-auto relative">
+      <div class="">
+        <img src="assets/nerenso-art-3.png" alt="" class="mx-auto w-72 lg:absolute left-0 lg:w-[400px]" />
+      </div>
+      <div class="pt-6 lg:pl-32 md:pl-12 lg:py-24 col-span-2 text-center md:text-left max-w-md md:max-w-full mx-auto md:mx-0">
+        <h3 class="text-lg">Hi There <span class="text-2xl">👋🏻</span></h3>
+        <h2 class="font-bold text-2xl md:text-3xl">I'm Nerenso.</h2>
+        <p class="my-4 leading-7">
+          A designer turned developer who is passionate about creating beautiful and functional web applications that solve real-world problems.
+        </p>
+
+        <div class="flex items-center justify-center gap-2 my-6 justify-c md:justify-normal">
+          <a
+            href="assets/sample.pdf"
+            class="flex items-center gap-1 px-5 py-3 shadow-md rounded-md transition-all duration-200 bg-orange-500 text-white font-medium text-sm hover:shadow-none"
+          >
+            <svg
+              class="w-5 h-5"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Resume</span>
+          </a>
+
+          <a
+            href="assets/sample.pdf"
+            class="flex items-center gap-1 px-5 py-3 shadow-md rounded-md transition-all duration-200 bg-slate-500 text-white font-medium text-sm hover:shadow-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z"
+              />
+            </svg>
+
+            <span>Get in Touch</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <div class="custom-shape-divider-top-1698767352 fill-none">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M1200 0L0 0 892.25 114.72 1200 0z" class="shape-fill"></path>
+    </svg>
+  </div> -->
+
+  <div class="custom-shape-divider-top-1698835768 fill-slate-100 bg-white -mt-14 z-0 border-none">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+    </svg>
+  </div>
+
+  <section class="py-6 md:py-16 px-6 w-full bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-12">
+        <div class="space-y-4 leading-7 md:col-span-6 col-span-12 text-slate-700 font-light">
+          <h2 class="font-bold md:text-3xl text-2xl text-slate-800">About Me</h2>
+          <p>
+            I have a background in design and I have been working as a freelancer for about 12 years now. After dabbling around in various frameworks
+            and technology stacks such as <a href="">Nuxt</a>, <a href="">React</a>, <a href="">NextJS</a>, Remix and Django, I developed a fondness
+            for Laravel and VueJS. Which is my go-to stack for developing web applications.
+          </p>
+
+          <p>I have experience in building dynamic and responsive web applications using PHP, HTML, CSS, JavaScript, and other technologies.</p>
+
+          <p>
+            I love learning new skills and exploring new challenges in web development. You can check out some of my projects below and contact me if
+            you are interested in working with me.
+          </p>
+        </div>
+        <div class="col-span-12 mt-6 md:col-span-6 md:px-10 flex items-center justify-center">
+          <img src="/assets/coding-art.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-6 w-full bg-white">
+    <div class="max-w-5xl w-full mx-auto space-y-2">
+      <h2 class="font-bold md:text-3xl text-2xl text-slate-800">My Toolset</h2>
+      <div class="flex items-center gap-x-12 gap-y-0 md:gap-12 flex-wrap">
+        {{collection:technologies sort="date:asc"}}
+        <a href="{{link}}" class="group my-6">
+          <img
+            class="w-10 h-10 md:w-16 md:h-16 object-contain mx-auto filter grayscale group-hover:filter-none transition-all duration-200"
+            src="{{image}}"
+            alt=""
+          />
+          <p class="text-center text-sm mt-2">{{title}}</p>
+        </a>
+        {{/collection:technologies}}
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full bg-white pt-12 pb-28 px-6">
+    <div x-data="{activeTab: 'Development'}" class="max-w-5xl mx-auto space-y-6">
+      <header class="flex items-center justify-between">
+        <h2 class="text-2xl md:text-3xl font-bold">Projects</h2>
+        <ul class="flex items-center gap-4 text-sm">
+          <li @click="activeTab = 'Development'" class="flex items-center gap-1 cursor-pointer">
+            <div :class="activeTab === 'Development' ? 'bg-orange-500' : 'bg-slate-300'" class="w-1.5 h-1.5 rounded-full"></div>
+            <span :class="activeTab === 'Development' ? '' : 'text-slate-500'" class="font-medium">Development</span>
+          </li>
+          <li @click="activeTab = 'Design'" class="flex items-center gap-1 cursor-pointer">
+            <div :class="activeTab === 'Design' ? 'bg-orange-500' : 'bg-slate-300'" class="w-1.5 h-1.5 rounded-full"></div>
+            <span :class="activeTab === 'Design' ? '' : 'text-slate-500'" class="font-medium">Design</span>
+          </li>
+        </ul>
+      </header>
+
+      <div x-show="activeTab === 'Development'" x-transition:enter.duration.500ms class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6">
+        {{collection:projects taxonomy:type="development"}}
+        <article class="z-0 group flex flex-col bg-white border rounded-2xl shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden">
+          <img src="{{featured_image}}" alt="" class="group-hover:scale-125 transition-all duration-200 h-[200px] md:h-[300px] object-cover" />
+          <div class="p-6 z-10 bg-white">
+            <h3 class="text-xl font-semibold">{{title}}</h3>
+            <ul class="flex items-center flex-wrap gap-2 mt-2 mb-4">
+              {{tags}}
+              <li class="text-[10px] px-2 py-1 bg-orange-100 font-medium text-orange-600 rounded-full">{{value}}</li>
+              {{/tags}}
+            </ul>
+            <div class="text-slate-600 leading-7">{{content}}</div>
+            <a href="{{url}}">read more</a>
+          </div>
+        </article>
+        {{/collection:projects}}
+      </div>
+
+      <div x-show="activeTab === 'Design'" x-transition:enter.duration.500ms class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6">
+        {{collection:projects taxonomy:type="design"}}
+        <article class="z-0 group flex flex-col bg-white border rounded-2xl shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden">
+          <img src="{{featured_image}}" alt="" class="group-hover:scale-125 transition-all duration-200 h-[200px] md:h-[300px] object-cover" />
+          <div class="p-6 z-10 bg-white flex h-full flex-1 flex-col">
+            <h3 class="text-xl font-semibold">{{title}}</h3>
+            <ul class="flex items-center flex-wrap gap-2 mt-2 mb-4">
+              {{tags}}
+              <li class="text-[10px] px-2 py-1 bg-orange-100 font-medium text-orange-600 rounded-full">{{value}}</li>
+              {{/tags}}
+            </ul>
+            <div class="text-slate-600 leading-7 h-full flex-1">{{content}}</div>
+            <a href="{{url}}" class="mt-4">Read More</a>
+          </div>
+        </article>
+        {{/collection:projects}}
+      </div>
+    </div>
+  </section>
+</div>
