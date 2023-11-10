@@ -123,15 +123,15 @@
         {{collection:projects taxonomy:type="development"}}
         <article class="z-0 group flex flex-col bg-white border rounded-2xl shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden">
           <img src="{{featured_image}}" alt="" class="group-hover:scale-125 transition-all duration-200 h-[200px] md:h-[300px] object-cover" />
-          <div class="p-6 z-10 bg-white">
+          <div class="p-6 z-10 bg-white flex h-full flex-1 flex-col">
             <h3 class="text-xl font-semibold">{{title}}</h3>
             <ul class="flex items-center flex-wrap gap-2 mt-2 mb-4">
               {{tags}}
               <li class="text-[10px] px-2 py-1 bg-orange-100 font-medium text-orange-600 rounded-full">{{value}}</li>
               {{/tags}}
             </ul>
-            <div class="text-slate-600 leading-7">{{content}}</div>
-            <a href="{{url}}">read more</a>
+            <div class="text-slate-600 leading-7 h-full flex-1">{{summary}}</div>
+            <a href="{{url}}" class="mt-4 px-3 py-1.5 bg-slate-100 rounded-md w-fit text-sm">read more</a>
           </div>
         </article>
         {{/collection:projects}}
@@ -148,8 +148,8 @@
               <li class="text-[10px] px-2 py-1 bg-orange-100 font-medium text-orange-600 rounded-full">{{value}}</li>
               {{/tags}}
             </ul>
-            <div class="text-slate-600 leading-7 h-full flex-1">{{content}}</div>
-            <a href="{{url}}" class="mt-4">Read More</a>
+            <div class="text-slate-600 leading-7 h-full flex-1">{{summary}}</div>
+            <a href="{{url}}" class="mt-4 px-3 py-1.5 bg-slate-100 rounded-md w-fit text-sm">Read More</a>
           </div>
         </article>
         {{/collection:projects}}

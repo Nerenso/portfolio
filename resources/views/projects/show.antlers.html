@@ -1,8 +1,13 @@
-<div class="w-full mx-auto relative">
-  <div class="w-full h-96 bg-black/30 top-0 z-10 absolute"></div>
-  <img src="{{featured_image}}" alt="" class="w-full max-w-5xl mx-auto h-96 absolute top-0 object-cover" />
-  <section class="pt-96 mx-auto max-w-5xl">
-    <h2>{{title}}</h2>
-    <p>{{content}}</p>
+<div class="w-full mx-auto bg-white">
+  <section class="mx-auto max-w-3xl py-28 md:py-48 px-6">
+    <div class="">
+      <div class="mb-16">
+        <h3 class="text-3xl font-bold mb-4">{{title}}</h3>
+        <div class="text-xl leading-relaxed font-light text-slate-600 mb-8">{{summary}}</div>
+        <img src="{{featured_image}}" alt="" class="w-full max-w-5xl mx-auto object-cover rounded-lg" />
+      </div>
+      <div class="text-slate-600 leading-7 space-y-4">{{body}}</div>
+      <div class="leading-7 space-y-4">{{post_content}}</div>
+    </div>
   </section>
 </div>
