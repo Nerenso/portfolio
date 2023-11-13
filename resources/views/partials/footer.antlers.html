@@ -5,9 +5,9 @@
       If you’d like to talk about a project you want help with or need any advice about product design, just drop me a message. I’m currently
       available for both design and development work.
     </p>
-    <a
-      href="mailto:nerenso@hotmail.com?cc=&bcc=&subject=About%20Rebelfox&body="
-      class="flex w-fit md:mx-auto items-center gap-1 px-5 py-3 shadow-md rounded-md transition-all duration-200 bg-orange-500 text-white font-medium text-sm hover:shadow-none"
+    {{partial:mailto-link}}
+    <div
+      class="flex my-6 w-fit md:mx-auto items-center gap-1 px-5 py-3 shadow-md rounded-md transition-all duration-200 bg-orange-500 text-white font-medium text-sm hover:shadow-none"
     >
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
         <path
@@ -18,7 +18,9 @@
       </svg>
 
       <span>Get in Touch</span>
-    </a>
+    </div>
+
+    {{/partial:mailto-link}}
   </div>
   <div>
     <p class="text-xs text-white md:text-center">©Designed and Build with ♥️ by Nerenso</p>
