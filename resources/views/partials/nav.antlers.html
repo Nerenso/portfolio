@@ -1,12 +1,16 @@
-
-<nav x-data="{showMenu: false, atTop: false}" class="top-0 z-50 px-4 md:pl-4 md:pr-8 py-4 md:py-6 w-full max-w-6xl mx-auto  flex items-center justify-between rounded-xl transition-all duration-200" :class="{'shadow-md bg-white/40 backdrop-blur-lg': atTop}" @scroll.window="atTop = (window.pageYOffset < 50) ? false: true">
+<nav
+  x-data="{showMenu: false, atTop: false}"
+  class="top-0 z-50 px-4 md:pl-4 md:pr-8 py-4 md:py-6 w-full max-w-6xl mx-auto flex items-center justify-between rounded-xl transition-all duration-200"
+  :class="{'shadow-md bg-white/40 backdrop-blur-lg': atTop}"
+  @scroll.window="atTop = (window.pageYOffset < 50) ? false: true"
+>
   <div class="w-[112px]">
     <a href="/">
       <img src="/assets/Rebelfox-with-dot.svg" alt="Rebelfox Logo" />
     </a>
   </div>
 
-  <ul class="hidden md:flex items-center gap-4 ">
+  <ul class="hidden md:flex items-center gap-4">
     <li class="my-2">
       {{partial:resume-link}}
       <span class="text-sm font-medium text-slate-600 hover:text-orange-500 transition-all duration-200">Resume</span>
@@ -15,10 +19,9 @@
 
     <li>
       {{partial:mailto-link}}
-      <span class="text-sm font-medium  text-slate-600 hover:text-orange-500 transition-all duration-200">Contact</span>
+      <span class="text-sm font-medium text-slate-600 hover:text-orange-500 transition-all duration-200">Contact</span>
       {{/partial:mailto-link}}
     </li>
-
   </ul>
 
   <button class="md:hidden" @click="showMenu = !showMenu">
@@ -26,9 +29,9 @@
       <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
     </svg>
   </button>
-  
+
   <template x-teleport="body">
-    <div  
+    <div
       x-cloak
       x-on:click="showMenu = false, console.log('wrapper clicked')"
       class="p-2 md:p-4 z-50 bg-black/50 h-screen w-full fixed top-0 right-0 left-0 bottom-0"
@@ -80,7 +83,7 @@
               <ul class="flex items-center justify-center gap-4">
                 <li>
                   <a href="https://www.linkedin.com/in/nerenso-mahabir-52b0b91b/">
-                    <iconify-icon icon="formkit:linkedin" class="text-3xl"></iconify-icon>
+                    <iconify-icon icon="formkit:linkedin" class="text-2xl"></iconify-icon>
                   </a>
                 </li>
                 <li>
@@ -88,12 +91,12 @@
                     <iconify-icon icon="bi:github" class="text-2xl"></iconify-icon>
                   </a>
                 </li>
-                <li>
+                <!-- <li>
                   {{partial:mailto-link}}
                   <iconify-icon icon="fluent:mail-20-filled" class="text-3xl ml-2"></iconify-icon>
                   {{/partial:mailto-link}}
                   </a>
-                </li>
+                </li> -->
               </ul>
             </li>
           </ul>
