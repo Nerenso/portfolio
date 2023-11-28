@@ -1,13 +1,36 @@
 <div class="w-full mx-auto bg-white">
   <section class="mx-auto max-w-3xl py-28 md:py-48 px-6">
-    <div class="">
+    <div class="show">
       <div class="mb-16">
         <h3 class="text-3xl font-bold mb-4">{{title}}</h3>
         <div class="text-xl leading-relaxed font-light text-slate-600 mb-8">{{summary}}</div>
         <img src="{{featured_image}}" alt="" class="w-full max-w-5xl mx-auto object-cover rounded-lg" />
       </div>
       <div class="text-slate-600 leading-7 space-y-4">{{body}}</div>
-      <div class="leading-7 space-y-2 md:space-y-4">{{post_content}}</div>
+
+      {{post_body}} {{ if type == "text" }}
+
+      <div class="text-slate-600 leading-7 space-y-4">{{text}}</div>
+
+      {{ elseif type == "video_block" }}
+
+      <div class="my-8 relative w-full mx-auto">
+        <div
+          class="relative max-w-lg h-[600px] mx-auto bg-contain bg-no-repeat bg-center bg-[url('/public/assets/iphone-se.png')] w-full flex items-center justify-center px-10"
+        >
+          <div class="overflow-hidden -mt-10 max-w-[240px]">
+            <video src="{{iphone_video_field}}" autoplay muted loop playsinline></video>
+          </div>
+        </div>
+      </div>
+
+      {{ elseif type == "desktop_video_block" }}
+
+      <div class="overflow-hidden my-10 shadow-lg border rounded-lg w-full">
+        <video src="{{video_url}}" autoplay muted loop playsinline></video>
+      </div>
+
+      {{/if}} {{/post_body}}
     </div>
   </section>
 </div>

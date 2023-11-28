@@ -1,12 +1,12 @@
-<nav x-data="{showMenu: false}" class="top-0 z-50 px-4 py-4 bg-white w-full max-w-5xl mx-auto shadow-xl flex items-center justify-between rounded-xl">
+<nav x-data="{showMenu: false, atTop: false}" class="top-0 z-50 px-4 md:pl-4 md:pr-8 py-4 md:py-6 w-full max-w-6xl mx-auto  flex items-center justify-between rounded-xl transition-all duration-200" :class="{'shadow-md bg-white/40 backdrop-blur-lg': atTop}" @scroll.window="atTop = (window.pageYOffset < 50) ? false: true">
   <div class="w-[112px]">
     <a href="/">
       <img src="/assets/Rebelfox-with-dot.svg" alt="Rebelfox Logo" />
     </a>
   </div>
 
-  <ul class="hidden md:flex items-center gap-4">
-    <li>
+  <ul class="hidden md:flex items-center gap-4 ">
+    <!-- <li>
       <a
         href="/assets/sample.pdf"
         class="flex items-center gap-1 px-5 py-3 shadow-md rounded-md transition-all duration-200 bg-orange-500 text-white font-medium text-sm hover:shadow-none"
@@ -24,6 +24,18 @@
         </svg>
         <span>Resume</span>
       </a>
+    </li> -->
+
+    <li class="my-2">
+      {{partial:resume-link}}
+      <span class="text-sm font-medium text-slate-600 hover:text-orange-500 transition-all duration-200">Resume</span>
+      {{/partial:resume-link}}
+    </li>
+
+    <li>
+      {{partial:mailto-link}}
+      <span class="text-sm font-medium  text-slate-600 hover:text-orange-500 transition-all duration-200">Contact</span>
+      {{/partial:mailto-link}}
     </li>
 
   </ul>
@@ -71,16 +83,18 @@
           </button>
         </header>
         <ul class="mt-12">
-          <li class="text-center">
-            <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 pb-1">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg> -->
+          <li class="text-center mb-6">
             {{partial:resume-link}}
-            <span class="text-2xl font-bold">View Resume</span>
+            <span class="text-2xl font-medium">View Resume</span>
             {{/partial:resume-link}}
           </li>
-          <li class="mt-9 text-center space-y-2">
-            <span class="">Contact</span>
+          <li class="text-center">
+            {{partial:mailto-link}}
+            <span class="text-2xl font-medium">Send Mail</span>
+            {{/partial:mailto-link}}
+          </li>
+          <li class="mt-12 text-center space-y-2">
+            <!-- <span class="">Contact</span> -->
             <ul class="flex items-center justify-center gap-4">
               <li>
                 <a href="https://www.linkedin.com/in/nerenso-mahabir-52b0b91b/">

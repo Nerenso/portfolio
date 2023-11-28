@@ -20,4 +20,12 @@
   p {
     @apply font-light;
   }
+
+  .show ul {
+    @apply list-disc;
+  }
+
+  .show li {
+    @apply my-2 ml-4;
+  }
 }

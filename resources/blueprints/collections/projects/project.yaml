@@ -72,36 +72,7 @@ tabs:
               antlers: false
               hide_display: false
           -
-            handle: post_content
-            field:
-              container: assets
-              restrict: false
-              buttons:
-                - bold
-                - italic
-                - unorderedlist
-                - orderedlist
-                - quote
-                - link
-                - image
-                - table
-              automatic_line_breaks: true
-              automatic_links: false
-              escape_markup: false
-              heading_anchors: false
-              smartypants: false
-              table_of_contents: false
-              antlers: false
-              type: markdown
-              display: 'Post Content'
-              icon: markdown
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              replicator_preview: true
-              hide_display: false
-          -
-            handle: body
+            handle: post_body
             field:
               buttons:
                 - h2
@@ -115,16 +86,12 @@ tabs:
                 - anchor
                 - image
                 - table
-                - h1
-                - h4
-                - h5
-                - h6
               smart_typography: false
-              save_html: false
-              inline: true
+              save_html: true
+              inline: false
               toolbar_mode: fixed
               reading_time: false
-              word_count: true
+              word_count: false
               fullscreen: true
               allow_source: true
               enable_input_rules: true
@@ -138,14 +105,75 @@ tabs:
               collapse: false
               previews: true
               type: bard
-              display: Body
+              display: 'Post Body'
               icon: bard
               listable: hidden
               instructions_position: above
               visibility: visible
               replicator_preview: true
               hide_display: false
-              container: assets
+              sets:
+                blocks:
+                  display: Blocks
+                  instructions: null
+                  icon: null
+                  sets:
+                    video_block:
+                      display: 'Video Block'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: iphone_video_field
+                          field:
+                            type: video
+                            display: 'iPhone Video Field'
+                            icon: video
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                    desktop_video_block:
+                      display: 'Desktop Video Block'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: video_url
+                          field:
+                            type: video
+                            display: 'Video URL'
+                            icon: video
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
+                    single_image:
+                      display: 'Single Image'
+                      instructions: null
+                      icon: null
+                      fields:
+                        -
+                          handle: image_url
+                          field:
+                            max_files: 1
+                            min_files: 1
+                            mode: list
+                            container: assets
+                            restrict: false
+                            allow_uploads: true
+                            show_filename: true
+                            show_set_alt: true
+                            type: assets
+                            display: 'Image Url'
+                            icon: assets
+                            listable: hidden
+                            instructions_position: above
+                            visibility: visible
+                            replicator_preview: true
+                            hide_display: false
           -
             handle: tags
             field:
