@@ -30,6 +30,9 @@
         <video src="{{video_url}}" autoplay muted loop playsinline></video>
       </div>
 
+      {{ elseif type == "single_image" }}
+      <img src="{{image_url}}" alt="" class="w-full my-8 max-w-5xl mx-auto object-cover rounded-lg" />
+
       {{/if}} {{/post_body}}
     </div>
   </section>

@@ -26,6 +26,6 @@
   }
 
   .show li {
-    @apply my-2 ml-4;
+    @apply my-4 ml-6;
   }
 }
