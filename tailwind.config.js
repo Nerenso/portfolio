@@ -12,6 +12,7 @@ export default {
     extend: {
       fontFamily: {
         poppins: "Poppins",
+        opensans: "Open Sans",
       },
     },
   },

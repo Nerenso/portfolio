@@ -3,14 +3,14 @@
     <div class="show">
       <div class="mb-16">
         <h3 class="text-3xl font-bold mb-4">{{title}}</h3>
-        <div class="text-xl leading-relaxed font-light text-slate-600 mb-8">{{summary}}</div>
+        <div class="summary text-2xl leading-relaxed font-light text-slate-600 mb-8">{{summary}}</div>
         <img src="{{featured_image}}" alt="" class="w-full max-w-5xl mx-auto object-cover rounded-lg" />
       </div>
-      <div class="text-slate-600 leading-7 space-y-4">{{body}}</div>
+      <div class="text-slate-600 leading-7">{{body}}</div>
 
       {{post_body}} {{ if type == "text" }}
 
-      <div class="text-slate-600 leading-7 space-y-4">{{text}}</div>
+      <div class="text-slate-600">{{text}}</div>
 
       {{ elseif type == "video_block" }}
 

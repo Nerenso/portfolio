@@ -5,6 +5,25 @@ tabs:
       -
         fields:
           -
+            handle: image
+            field:
+              max_files: 1
+              min_files: 1
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: Image
+              icon: assets
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
             handle: title
             field:
               type: text
@@ -25,19 +44,28 @@ tabs:
               replicator_preview: true
               hide_display: false
           -
-            handle: image
+            handle: body
             field:
-              max_files: 1
-              min_files: 1
-              mode: list
-              container: assets
               restrict: false
-              allow_uploads: true
-              show_filename: true
-              show_set_alt: true
-              type: assets
-              display: Image
-              icon: assets
+              buttons:
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - quote
+                - link
+                - image
+                - table
+              automatic_line_breaks: true
+              automatic_links: false
+              escape_markup: false
+              heading_anchors: false
+              smartypants: false
+              table_of_contents: false
+              antlers: false
+              type: markdown
+              display: Body
+              icon: markdown
               listable: hidden
               instructions_position: above
               visibility: visible

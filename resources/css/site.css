@@ -13,12 +13,12 @@
     @apply text-2xl font-bold text-slate-700 md:text-3xl;
   }
 
-  h3 {
-    @apply text-lg font-semibold text-slate-700 md:text-xl pt-4;
+  .show h3 {
+    @apply text-lg font-bold text-slate-700 md:text-xl mt-6;
   }
 
   p {
-    @apply font-light;
+    @apply font-normal text-base leading-relaxed text-slate-600;
   }
 
   .show ul {
@@ -27,5 +27,9 @@
 
   .show li {
     @apply my-4 ml-6;
+  }
+
+  .summary p {
+    @apply text-xl leading-relaxed font-normal text-slate-600 mb-8;
   }
 }
