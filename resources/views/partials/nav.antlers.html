@@ -33,7 +33,7 @@
   <template x-teleport="body">
     <div
       x-cloak
-      x-on:click="showMenu = false, console.log('wrapper clicked')"
+      x-on:click="showMenu = false"
       class="p-2 md:p-4 z-50 bg-black/50 h-screen w-full fixed top-0 right-0 left-0 bottom-0"
       x-show="showMenu"
       x-transition:enter="transition ease duration-200 "
@@ -61,7 +61,7 @@
                 <img src="/assets/Rebelfox-with-dot.svg" alt="Rebelfox Logo" />
               </a>
             </div>
-            <button @click.stop="showMenu = false, console.log('Close Button Clicked')" class="z-50">
+            <button @click.stop="showMenu = false" class="z-50">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>

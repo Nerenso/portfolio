@@ -85,12 +85,12 @@
     <div class="max-w-5xl w-full mx-auto space-y-4">
       <h2 class="font-bold md:text-3xl text-2xl text-slate-800 mb-8">My Toolset</h2>
       <!-- <div class="flex items-center gap-x-12 gap-y-0 md:gap-12 flex-wrap"> -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-2">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
         {{collection:technologies sort="date:asc"}}
-        <a href="{{link}}" class="flex items-center justify-start bg-slate-50 p-3 group rounded-xl gap-2">
-          <div class="p-2 flex items-center justify-center h-10 w-10 relative overflow-hidden rounded-xl">
+        <a href="{{link}}" class="flex items-center justify-start bg-slate-50 p-3 group rounded-lg gap-2">
+          <div class="p-2 flex items-center justify-center h-10 w-10 relative overflow-hidden rounded-xl shadow-md">
             <img class="object-contain filter group-hover:filter-none transition-all duration-200" src="{{image}}" alt="" />
-            <img class="object-contain absolute opacity-70 top-0 w-12 h-12 blur-lg filter transition-all duration-200" src="{{image}}" alt="" />
+            <img class="object-contain absolute opacity-90 contrast-125 brightness-125 sh top-0 w-12 h-12 blur-lg filter" src="{{image}}" alt="" />
           </div>
           <p class="text-center text-sm">{{title}}</p>
         </a>
