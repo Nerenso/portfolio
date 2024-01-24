@@ -22,7 +22,11 @@
   }
 
   p {
-    @apply font-normal text-base leading-relaxed text-slate-600;
+    @apply font-light text-base leading-relaxed text-slate-600;
+  }
+
+  .show p {
+    @apply mb-4;
   }
 
   .show ul {
