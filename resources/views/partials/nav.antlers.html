@@ -92,17 +92,37 @@
         </a>
       </div>
 
-      <ul class="hidden md:flex items-center gap-4 z-10">
-        <li class="my-2">
-          {{partial:resume-link}}
-          <span class="text-sm font-medium text-slate-600 hover:text-orange-500 transition-all duration-200">Resume</span>
-          {{/partial:resume-link}}
+      <ul class="hidden md:flex items-center gap-4 justify-center z-10">
+        <li>
+          <ul class="flex items-center justify-center gap-4 mx-6 font-medium">
+            <li class="hover:text-orange-600 transition-all duration-200">
+              <a href="/">
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="hover:text-orange-600 transition-all duration-200">
+              <a href="/#projects">
+                <span>Projects</span>
+              </a>
+            </li>
+          </ul>
         </li>
 
         <li>
           {{partial:mailto-link}}
-          <span class="text-sm font-medium text-slate-600 hover:text-orange-500 transition-all duration-200">Contact</span>
+          <iconify-icon icon="fluent:mail-16-regular" class="text-2xl mt-1.5"></iconify-icon>
+
           {{/partial:mailto-link}}
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/nerenso-mahabir-52b0b91b/">
+            <iconify-icon icon="eva:linkedin-fill" class="text-2xl mt-0.5"></iconify-icon>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Nerenso">
+            <iconify-icon icon="bi:github" class="text-[18px] mt-1"></iconify-icon>
+          </a>
         </li>
       </ul>
 
@@ -117,17 +137,22 @@
 
     <ul id="navLinkContainer" class="relative">
       <li id="navItem" class="text-center mb-6">
-        {{partial:resume-link}}
-        <span class="text-2xl font-medium">View Resume</span>
-        {{/partial:resume-link}}
+        <a href="/" class="text-2xl font-medium">Home</a>
       </li>
-      <li id="navItem" class="text-center">
-        {{partial:mailto-link}}
-        <span class="text-2xl font-medium">Send Mail</span>
-        {{/partial:mailto-link}}
+      <li id="navItem" class="text-center" @click="$store.navMenu.toggleMenu()">
+        <a href="/#projects">
+          <span class="text-2xl font-medium">Projects</span>
+        </a>
       </li>
+
       <li id="navItem" class="mt-16 text-center space-y-2">
         <ul class="flex items-center justify-center gap-4">
+          <li>
+            {{partial:mailto-link}}
+            <iconify-icon icon="fluent:mail-16-regular" class="text-3xl mt-[3px]"></iconify-icon>
+
+            {{/partial:mailto-link}}
+          </li>
           <li>
             <a href="https://www.linkedin.com/in/nerenso-mahabir-52b0b91b/">
               <iconify-icon icon="formkit:linkedin" class="text-2xl"></iconify-icon>

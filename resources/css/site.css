@@ -9,6 +9,10 @@
 }
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
   h2 {
     @apply text-2xl font-bold text-slate-700 md:text-3xl;
   }

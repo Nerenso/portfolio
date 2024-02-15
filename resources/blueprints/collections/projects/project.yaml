@@ -175,6 +175,18 @@ tabs:
                             replicator_preview: true
                             hide_display: false
           -
+            handle: work_in_progress
+            field:
+              default: false
+              type: toggle
+              display: 'Work in Progress'
+              icon: toggle
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
             handle: tags
             field:
               type: list

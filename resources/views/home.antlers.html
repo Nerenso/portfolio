@@ -12,28 +12,9 @@
         </p>
 
         <div class="flex items-center justify-center gap-2 my-6 justify-c md:justify-normal">
-          {{partial:resume-link}}
+          {{partial:mailto-link}}
           <div
-            class="flex items-center gap-1 px-5 py-3 shadow-md rounded-md transition-all duration-200 bg-orange-500 text-white font-medium text-sm hover:shadow-none"
-          >
-            <svg
-              class="w-5 h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>Resume</span>
-          </div>
-          {{/partial:resume-link}}
-
-          <a
-            href="assets/sample.pdf"
-            class="flex items-center gap-1 px-5 py-3 shadow-md rounded-md transition-all duration-200 bg-slate-500 text-white font-medium text-sm hover:shadow-none"
+            class="flex w-fit md:mx-auto items-center gap-1 px-5 py-3 shadow-md rounded-md transition-all duration-200 bg-orange-500 text-white font-medium text-sm hover:shadow-none"
           >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
               <path
@@ -44,7 +25,9 @@
             </svg>
 
             <span>Get in Touch</span>
-          </a>
+          </div>
+
+          {{/partial:mailto-link}}
         </div>
       </div>
     </div>
@@ -84,13 +67,12 @@
   <section class="py-24 px-6 w-full bg-white">
     <div class="max-w-5xl w-full mx-auto space-y-4">
       <h2 class="font-bold md:text-3xl text-2xl text-slate-800 mb-8">My Toolset</h2>
-      <!-- <div class="flex items-center gap-x-12 gap-y-0 md:gap-12 flex-wrap"> -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
         {{collection:technologies sort="date:asc"}}
         <a href="{{link}}" class="flex items-center justify-start bg-slate-50 p-3 group rounded-lg gap-2">
           <div class="p-2 flex items-center justify-center h-10 w-10 relative overflow-hidden rounded-xl shadow-md">
             <img class="object-contain filter group-hover:filter-none transition-all duration-200" src="{{image}}" alt="" />
-            <img class="object-contain absolute opacity-90 contrast-125 brightness-125 sh top-0 w-12 h-12 blur-lg filter" src="{{image}}" alt="" />
+            <img class="object-contain absolute opacity-90 brightness-125 top-0 w-12 h-12 blur-lg filter" src="{{image}}" alt="" />
           </div>
           <p class="text-center text-sm">{{title}}</p>
         </a>
@@ -99,7 +81,8 @@
     </div>
   </section>
 
-  <section class="w-full bg-white pt-12 pb-28 px-6">
+  <section class="w-full relative bg-white pt-12 pb-28 px-6">
+    <div id="projects" class="projects-anchor absolute -top-32"></div>
     <div x-data="{activeTab: 'Development'}" class="max-w-5xl mx-auto space-y-6">
       <header class="flex items-center justify-between mb-10">
         <h2 class="text-2xl md:text-3xl font-bold">Projects</h2>
@@ -117,10 +100,20 @@
 
       <div x-show="activeTab === 'Development'" x-transition:enter.duration.500ms class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6">
         {{collection:projects taxonomy:type="development"}}
-        <article class="z-0 group flex flex-col bg-white border rounded-2xl shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden">
-          <img src="{{featured_image}}" alt="" class="group-hover:scale-125 transition-all duration-200 h-[200px] md:h-[300px] object-cover" />
+
+        <article
+          class="z-0 group flex flex-col bg-white border rounded-2xl shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden relative"
+        >
+          <img src="{{featured_image}}" alt="" class="group-hover:scale-110 transition-all duration-200 h-[200px] md:h-[300px] object-cover" />
+          {{if work_in_progress}}
+          <div class="absolute top-4 right-4 bg-white/70 backdrop-blur-md rounded-full px-3 py-1.5 flex items-center justify-center gap-1">
+            <div class="w-[7px] h-[7px] rounded-full bg-emerald-500"></div>
+            <p class="text-xs font-medium">Work in Progress</p>
+          </div>
+          {{/if}}
           <div class="p-6 z-10 bg-white flex h-full flex-1 flex-col">
             <h3 class="text-xl font-semibold">{{title}}</h3>
+
             <ul class="flex items-center flex-wrap gap-2 mt-2 mb-4">
               {{tags}}
               <li class="text-[10px] px-2 py-1 bg-orange-100 font-medium text-orange-600 rounded-full">{{value}}</li>
@@ -128,6 +121,11 @@
             </ul>
             <div class="text-slate-600 leading-7 h-full flex-1">{{summary}}</div>
             <div class="flex items-center gap-2 my-4 w-full">
+              {{if work_in_progress}}
+              <a href="{{url}}" class="text-orange-500 text-center font-medium text-sm px-4 py-2 border-orange-300 shadow-sm border rounded-md w-full"
+                >Read More</a
+              >
+              {{else}}
               <a
                 href="{{url}}"
                 class="text-orange-500 border hidden lg:block text-center font-medium text-sm px-4 py-2 border-orange-300 shadow-sm borde rounded-md w-full"
@@ -142,11 +140,13 @@
                 <span class="text-sm font-medium">Demo</span>
               </a>
             </div>
+
             <a
               href="{{url}}"
               class="text-orange-500 lg:hidden text-center font-medium text-sm px-4 py-2 border-orange-300 shadow-sm border rounded-md w-full"
               >Read More</a
             >
+            {{/if}}
           </div>
         </article>
         {{/collection:projects}}
@@ -155,7 +155,7 @@
       <div x-show="activeTab === 'Design'" x-transition:enter.duration.500ms class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6">
         {{collection:projects taxonomy:type="design"}}
         <article class="z-0 group flex flex-col bg-white border rounded-2xl shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden">
-          <img src="{{featured_image}}" alt="" class="group-hover:scale-125 transition-all duration-200 h-[200px] md:h-[300px] object-cover" />
+          <img src="{{featured_image}}" alt="" class="group-hover:scale-110 transition-all duration-200 h-[200px] md:h-[300px] object-cover" />
           <div class="p-6 z-10 bg-white flex h-full flex-1 flex-col">
             <h3 class="text-xl font-semibold">{{title}}</h3>
             <ul class="flex items-center flex-wrap gap-2 mt-2 mb-4">
