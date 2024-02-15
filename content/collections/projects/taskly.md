@@ -9,12 +9,12 @@ tags:
   - MySQL
   - Inertia
 updated_by: 498d3810-d9ff-4ccb-bf96-a1eaa1c2f23b
-updated_at: 1708024116
+updated_at: 1708030036
 type:
   - development
 summary: 'A rather simple to-do list application, I tend to build a simple app whenever trying out a new technology stack, and a classic todo app is a simple way to see how to implement essential features.'
 github_link: 'https://github.com/Nerenso/taskly-laravel'
 demo_site: 'https://taskly.rebelfox.dev/'
-work_in_progress: true
+work_in_progress: false
 ---
 A rather simple to-do list application, I tend to build a simple app whenever trying out a new technology stack, and a classic todo app is a simple way to see how to implement essential features.
