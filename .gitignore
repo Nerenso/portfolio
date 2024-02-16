@@ -1,5 +1,5 @@
 /.phpunit.cache
-/content
+/content/collections/projects
 /node_modules
 /public/build
 /public/hot
