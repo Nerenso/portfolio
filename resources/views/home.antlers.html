@@ -99,7 +99,7 @@
       </header>
 
       <div x-show="activeTab === 'Development'" x-transition:enter.duration.500ms class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6">
-        {{collection:projects taxonomy:type="development" sort="date:asc"}}
+        {{collection:projects sort="updated_at:desc" taxonomy:type="development" }}
 
         <article
           class="z-0 group flex flex-col bg-white border rounded-2xl shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden relative"
@@ -155,7 +155,7 @@
       </div>
 
       <div x-show="activeTab === 'Design'" x-transition:enter.duration.500ms class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6">
-        {{collection:projects taxonomy:type="design" sort="date:asc"}}
+        {{collection:projects taxonomy:type="design" sort="updated_at:desc"}}
         <article class="z-0 group flex flex-col bg-white border rounded-2xl shadow-sm hover:shadow-lg transition-all duration-200 overflow-hidden">
           <img src="{{featured_image}}" alt="" class="group-hover:scale-110 transition-all duration-200 h-[200px] md:h-[300px] object-cover" />
           <div class="p-6 z-10 bg-white flex h-full flex-1 flex-col">
