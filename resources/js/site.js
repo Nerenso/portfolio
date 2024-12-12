@@ -6,15 +6,15 @@ window.Alpine = Alpine;
 
 // Setup GSAP timelines
 let navMenuTl;
-let navBgTl;
+let navBackgroundTl;
 
 navMenuTl = gsap.timeline({ defaults: { duration: 0.3 } });
-navBgTl = gsap.timeline({ defaults: { duration: 0.2 } });
+navBackgroundTl = gsap.timeline({ defaults: { duration: 0.2 } });
 
-navBgTl
+navBackgroundTl
   .fromTo("#navBackDrop", { autoAlpha: 0 }, { autoAlpha: 0.4 })
   .to("#navBar", { backdropFilter: "blur(16px)", boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)" }, "<");
-navBgTl.pause();
+navBackgroundTl.pause();
 
 navMenuTl
   .to("#upper", { y: 4, width: 18, rotateZ: 45, duration: 0.2 })
@@ -77,11 +77,11 @@ document.addEventListener("alpine:init", () => {
     },
 
     showNavBackGround() {
-      navBgTl.restart();
+      navBackgroundTl.restart();
     },
 
     hideNavBackGround() {
-      navBgTl.reverse();
+      navBackgroundTl.reverse();
     },
   }));
 });
