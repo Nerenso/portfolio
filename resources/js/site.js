@@ -5,10 +5,10 @@ import Alpine from "alpinejs";
 window.Alpine = Alpine;
 
 // Setup GSAP timelines
-let tl;
+let navMenuTl;
 let navBgTl;
 
-tl = gsap.timeline({ defaults: { duration: 0.3 } });
+navMenuTl = gsap.timeline({ defaults: { duration: 0.3 } });
 navBgTl = gsap.timeline({ defaults: { duration: 0.2 } });
 
 navBgTl
@@ -16,7 +16,8 @@ navBgTl
   .to("#navBar", { backdropFilter: "blur(16px)", boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)" }, "<");
 navBgTl.pause();
 
-tl.to("#upper", { y: 4, width: 18, rotateZ: 45, duration: 0.2 })
+navMenuTl
+  .to("#upper", { y: 4, width: 18, rotateZ: 45, duration: 0.2 })
   .to("#lower", { y: -4, width: 18, rotateZ: -45, duration: 0.2 }, "<")
   .from("#fox", { x: 980, autoAlpha: 0, duration: 0.5 }, "<")
   .from("#letterR", { x: -265 }, "<")
@@ -27,7 +28,7 @@ tl.to("#upper", { y: 4, width: 18, rotateZ: 45, duration: 0.2 })
   .fromTo("#navLinkContainer", { autoAlpha: 0, duration: 0.2, height: 0 }, { autoAlpha: 1 }, "<")
   .from("#backDrop", { autoAlpha: 0, duration: 0.2 }, "<")
   .from("#navItem", { autoAlpha: 0, y: -20, stagger: 0.08, duration: 0.6, ease: "power1.out" }, "<");
-tl.pause();
+navMenuTl.pause();
 
 //Setup alpine navbar handler
 document.addEventListener("alpine:init", () => {
@@ -46,7 +47,7 @@ document.addEventListener("alpine:init", () => {
     init() {
       this.scrollPos = window.scrollY;
       Alpine.effect(() => {
-        this.show ? tl.restart() : tl.reverse();
+        this.show ? navMenuTl.restart() : navMenuTl.reverse();
       });
     },
   });
